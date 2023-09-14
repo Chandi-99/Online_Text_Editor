@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/JavaScript">
+
+var myArray =new Array();
+
+for(var i=0;i<10;i++){
+myArray[i]=prompt("Please enter Integer " + (i+1)+ " :");
+}
+
+document.write("<b>Students Marks Before Sort:</b></br>");
+document.write(myArray+ "</br></br>");
+document.write("<b>Students Marks After Sort:</b></br>");
+myArray.sort(function(a,b){return a-b});
+
+for(var i=0;i<10;i++){
+if(myArray[i]%2 == 1){
+document.write(myArray[i] + ",");
+}
+}
+
+for(var i=0;i<10;i++){
+if(myArray[i]%2 == 0){
+if(i != 9){
+document.write(myArray[i]+",");
+}
+else{
+document.write(myArray[i]);
+}
+}
+}
+</script>
+</head>
+<body>
+</body>
+</html>

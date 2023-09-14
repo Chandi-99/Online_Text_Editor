@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/JavaScript">
+
+var myArray =new Array();
+var min;
+var max;
+var avg;
+var sum=0;
+
+for(var i=0;i<10;i++){
+myArray[i]=prompt("Please enter Student " + (i+1)+ " Mark:");
+}
+
+min=myArray[0];
+max=myArray[0];
+
+for(var i=0;i<10;i++){
+
+if(min>myArray[i]){
+min=myArray[i];
+}
+if(max<myArray[i]){
+max=myArray[i];
+}
+
+sum=sum + Number(myArray[i]);
+}
+
+avg=sum/10;
+document.write("<b>Students Marks Before Sort:</b></br>");
+document.write(myArray+ "</br></br>");
+document.write("<b>Students Marks After Sort:</b></br>");
+document.write(myArray.sort(function(a,b){return a-b}) + "</br></br>");
+
+document.write("<b>Students Statistics</b></br></br>");
+document.write("<b>Max:</b>" + max + "</br>");
+document.write("<b>Min:</b>" + min + "</br>");
+document.write("<b>Median:</b>" + avg + "</br>");
+</script>
+</head>
+<body>
+</body>
+</html>

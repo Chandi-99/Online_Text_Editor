@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script type="text/JavaScript">
+
+function addition(){
+var int_1=document.getElementById("int_1").value;
+var int_2=document.getElementById("int_2").value;
+
+if(int_1==0 ||int_2==0){
+alert("Please enter right values");
+document.getElementById("result").innerHTML="Answer is not calculated.";
+}
+else if(isNaN(int_1) || isNaN(int_2)){
+alert("Please enter right values");
+document.getElementById("result").innerHTML="Answer is not calculated.";
+}else{
+document.getElementById("result").innerHTML="Answer is " + Number(Number(int_1)+Number(int_2));
+}
+}
+
+function substraction(){
+var int_1=document.getElementById("int_1").value;
+var int_2=document.getElementById("int_2").value;
+if(int_1==0 ||int_2==0){
+alert("Please enter right values");
+document.getElementById("result").innerHTML="Answer is not calculated.";
+}
+else if(isNaN(int_1) || isNaN(int_2)){
+alert("Please enter right values");
+document.getElementById("result").innerHTML="Answer is not calculated.";
+}
+else{
+document.getElementById("result").innerHTML="Answer is " + Number(Number(int_1)-Number(int_2));
+}
+}
+
+function multiplication(){
+var int_1=document.getElementById("int_1").value;
+var int_2=document.getElementById("int_2").value;
+if(int_1==0 ||int_2==0){
+alert("Please enter right values");
+document.getElementById("result").innerHTML="Answer is not calculated.";
+}
+else if(isNaN(int_1) || isNaN(int_2)){
+alert("Please enter right values");
+document.getElementById("result").innerHTML="Answer is not calculated.";
+}
+else{
+
+document.getElementById("result").innerHTML="Answer is " + Number(Number(int_1)*Number(int_2));
+}
+}
+
+function division(){
+
+var int_1=document.getElementById("int_1").value;
+var int_2=document.getElementById("int_2").value;
+if(int_1==0 ||int_2==0){
+alert("Please enter right values");
+document.getElementById("result").innerHTML="Answer is not calculated.";
+}
+else if(isNaN(int_1) || isNaN(int_2)){
+alert("Please enter right values");
+document.getElementById("result").innerHTML="Answer is not calculated.";
+}
+else{
+document.getElementById("result").innerHTML="Answer is " + Number(Number(int_1)/Number(int_2));
+}
+}
+
+function modulus(){
+var int_1=document.getElementById("int_1").value;
+var int_2=document.getElementById("int_2").value;
+if(int_1==0 ||int_2==0){
+alert("Please enter right values");
+document.getElementById("result").innerHTML="Answer is not calculated.";
+}
+else if(isNaN(int_1) || isNaN(int_2)){
+alert("Please enter right values");
+document.getElementById("result").innerHTML="Answer is not calculated.";
+}
+else{
+document.getElementById("result").innerHTML="Answer is " + Number(Number(int_1)%Number(int_2));
+}
+}
+</script>
+</head>
+<body>
+
+<div class="container">
+<div class="col-md-4"><h2 id="heading" ></h2></div>
+</div>
+<div class="container">
+<div class="col-md-4">
+<p1 style="font-size:18px;">Enter Number 1:<p1>
+<br>
+<input type="text" class="form-control" id="int_1">
+</div>
+<div class="col-md-4">
+<p1 style="font-size:18px;">Enter Number 2:</p1>
+<br>
+<input type="text" class="form-control" id="int_2">
+</div>
+</div>
+<br>
+<div class="container">
+  &nbsp&nbsp&nbsp<button type="button" class="btn btn-primary" onClick="addition()">ADDITION</button>
+<button type="button" class="btn btn-primary" onClick="substraction()">SUBSTRACTION</button>
+<button type="button" class="btn btn-primary" onClick="multiplication()">MULTIPLICATION</button>
+<button type="button" class="btn btn-primary" onClick="division()">DIVISION</button>
+<button type="button" class="btn btn-primary" onClick="modulus()">MODULUS</button>
+</div>
+
+<div class="container">
+<div class="col-md-4"><h2 id="result"></h2></div>
+</div>
+
+<script type="text/JavaScript">
+var name=prompt("Please Enter your Name");
+document.getElementById("heading").innerHTML=name+"'s Calculator";
+</script>
+</body>
+</html>

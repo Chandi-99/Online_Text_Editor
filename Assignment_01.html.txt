@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Text Editor</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script type=text/JavaScript>
+
+</script>
+<style type="text/CSS">
+#id1{
+background-color:dark gray;
+}
+</head>
+<body>
+
+<div id="id1">
+<center>
+<input type="button"><b>B</b>
+<input type="button"><u>U</u>
+<input type="button"><i>I</i>
+<input type="button"><u>A</u>
+<input type="button"><img src="left.png">
+<input type="button"><img src="center.png">
+<input type="button"><img src="right.png">
+<input type="button"><img src="justify.png">
+<input type="button"><img src="undo.png">
+<input type="button"><img src="redo.png">
+</center>
+</div>
+<center>
+<div class="form-group">
+  <label for="comment">Comment:</label>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+</div>
+</center>
+</body>
+</html>

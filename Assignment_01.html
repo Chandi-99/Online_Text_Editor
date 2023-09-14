@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Text Editor</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Using Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Using CSS -->
+    <style type="text/CSS">
+
+        #id1{ background-color:#5d6675; padding-bottom:13px; font-size:20px; } img{ width:21px; height:25px; padding-top: 1px; } #id2{ width:75%; } p1{ font-size:17px; color:white; } #textBox { text-align:left; width: 65%; height: 500px; padding: 12px; overflow:
+        hidden; font-size: medium; font-family:Verdana, Geneva, Tahoma, sans-serif} .btn{background-color: #5d6675; color:white; font-size: 16px; margin-top: 16px;} #bold{font-weight: bold;} #under{ text-decoration-line: underline;font-size: 16px;} #italic{font-style:
+        italic; font-size: 19px; font-family: 'Times New Roman', Times, serif;}#color { font-size: 15px; text-decoration-thickness: 3px;text-decoration-line: underline; text-underline-position: under; text-decoration-color: #000000;} .form-control { display:
+        block; width: 100%; height: calc(1.5em + 0.75rem + 2px); padding: 0.375rem 0.75rem; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057; background-color: #fff; background-clip: padding-box; border: 1px solid #ced4da; border-radius:
+        0.25rem; transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; } .form-control:focus { color: #495057; background-color: #fff; border-color: #80bdff; outline: 0; box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+    </style>
+
+</head>
+
+<body contenteditable="false">
+
+    <!-- Creating Style Menue -->
+    <div id="id1" contenteditable="false">
+        <center>
+            <input type="button" class="btn" id="bold" onclick="Bold()" value="B">
+            <input type="button" class="btn" id="under" onclick="Underline()" value="U">
+            <input type="button" class="btn" id="italic" onclick="Italic()" value="I">
+            <input type="color" id="color_picker" style='opacity:0;width:30px;position: absolute; margin-top:30px;' onchange="Color()" onselect="Color()">
+            <input type="button" class="btn" id="color" value="A">
+            <button class="btn" onclick="Left_Align()"><img src="left.png"></button>
+            <button class="btn" onclick="Center_Align()"><img src="center.png"></button>
+            <button class="btn" onclick="Right_Align()"><img src="right.png"></button>
+            <button class="btn" onclick="Justify()"><img src="justify.png"></button>
+            <button class="btn" onclick="Undo()"><img src="undo.png"></button>
+            <button class="btn" onclick="Redo()"><img src="redo.png"></button>
+        </center>
+    </div>
+
+    <br>
+    <center>
+        <div id="textBox" contenteditable="true" onscroll="false" class="form-control" onselect="focus()">
+        </div>
+    </center>
+    </br>
+    </br>
+
+    <!-- Using JavaScript-->
+    <script>
+        document.designMode = "on";
+
+        function Bold() {
+            document.execCommand("bold");
+        }
+
+        function Underline() {
+            document.execCommand("underline");
+        }
+
+        function Italic() {
+            document.execCommand("italic");
+        }
+
+        function Color() {
+            var color = document.getElementById("color_picker").value;
+            document.getElementById("color").style.textDecorationColor = color;
+            document.execCommand('foreColor', false, color);
+
+        }
+
+        function Left_Align() {
+            document.execCommand("justifyLeft");
+        }
+
+        function Center_Align() {
+            document.execCommand("justifyCenter");
+        }
+
+        function Right_Align() {
+            document.execCommand("justifyRight");
+        }
+
+        function Justify() {
+            document.execCommand("justifyFull");
+        }
+
+        function Undo() {
+            document.execCommand("undo");
+        }
+
+        function Redo() {
+            document.execCommand("redo");
+        }
+
+        function focus() {
+            document.getElementById("textBox").style.border.color = rgba(18, 32, 230);
+
+        }
+    </script>
+
+</body>
+
+</html>
